@@ -1,0 +1,7 @@
+<h1>Child BG Component</h1>
+<div style="height: 50px; width: 50px; border: 2px solid black; margin: 0;" [ngStyle]="{'background-color': pickedColor}">
+    <!-- <h1>Color BG: {{pickedColor}}</h1> -->
+     <label for="color">Select the Color:</label>
+     <input type="color" placeholder="Enter Color" id="color" [(ngModel)] = "pickedColor" (change)="clickToProduceColor()">
+     <!-- <button (click)="emitValue()">Enter</button> -->
+</div>

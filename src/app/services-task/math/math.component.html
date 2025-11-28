@@ -1,0 +1,5 @@
+<h1>Prime Check</h1>
+<input type="text" name="prime" id="prime" placeholder="Enter a number" [(ngModel)]="number"/>
+<button (click)="isPrime()">Check Prime</button>
+
+<h1>{{ result !== null ? (result ? 'Prime' : 'Not Prime') : '' }}</h1>

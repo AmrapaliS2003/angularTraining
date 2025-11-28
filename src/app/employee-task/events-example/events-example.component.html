@@ -1,0 +1,38 @@
+<h1>Events Example</h1>
+{{eventData | json}}
+<!-- INPUT============ -->
+<div>
+    <label for="username">User Name</label>
+    <input type="text" name="username" id="username_id" [placeholder]="'User Name'" 
+    [(ngModel)]="eventData.username" (click)="inputClicked()" (change)="inputChange()" (blur)="inputBlur()" (input)="inputInput()">
+</div>
+<!-- <--------SELECT----------------- -->
+<hr>
+<div>
+    <select [(ngModel)]="eventData.selectedOption" cli>
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+        <option value="d">D</option>
+    </select>
+</div>
+<!-- CHECKBOX=============> -->
+<hr>
+<div>
+    <label for="check1">Check 1</label>
+    <input type="checkbox" name="check1" id=""  [(ngModel)]="eventData.check1">
+</div>
+<div>
+    <label for="check2">Check 2</label>
+    <input type="checkbox" name="check2" id=""  [(ngModel)]="eventData.check2">
+</div>
+<!-- RADIO BUTTONS===========> -->
+<hr>
+<div>
+    <label for="gender">Men</label>
+    <input type="radio" name="gender" id="male" value="male"  [(ngModel)]="eventData.gender">
+</div>
+<div>
+    <label for="gender">Women</label>
+    <input type="radio" name="gender" id="female"  value="famale" [(ngModel)]="eventData.gender">
+</div>

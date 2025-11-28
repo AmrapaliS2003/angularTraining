@@ -1,0 +1,9 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <input name="username" [(ngModel)]="userName" required minlength="3" placeholder="username">
+  <p *ngIf="myForm && myForm.submitted && myForm.form && myForm.form.controls && myForm.form.controls['username'] && myForm.form.controls['username'].status === 'INVALID'">Invalid Username</p>
+  <input name="firstName" [(ngModel)]="firstName" required minlength="3" placeholder="firstName">
+  <p *ngIf="myForm && myForm.submitted && myForm.form && myForm.form.controls && myForm.form.controls['firstName'] && myForm.form.controls['firstName'].status === 'INVALID'">Invalid Firstname</p>
+  <input name="lastName" [(ngModel)]="lastName" required minlength="3" placeholder="lastName">
+  <p *ngIf="myForm && myForm.submitted && myForm.form && myForm.form.controls && myForm.form.controls['lastName'] && myForm.form.controls['lastName'].status === 'INVALID'">Invalid lastName</p>
+  <button>Submit</button>
+</form>

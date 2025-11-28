@@ -1,0 +1,24 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 40% 1fr;
+    .top, .bottom {
+        border: 1px solid;
+        border-radius: 10px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .middle {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 100%;
+        gap: 1rem;
+        .right-page, .left-page {
+            border: 1px solid black
+        }
+    }
+}

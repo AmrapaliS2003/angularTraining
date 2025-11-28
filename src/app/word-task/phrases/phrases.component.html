@@ -1,0 +1,13 @@
+
+<div>
+    <h4>Phrase Input</h4>
+    <label for="phrase">Enter a Phrase:</label>
+    <input type="text" placeholder="Enter a phrase" id="phrase" [(ngModel)]="phrase"/>
+</div>
+<app-remove-letter (letterRemoved)="updatedText($event)"></app-remove-letter>
+<app-remove-btn [phrase]="phrase" [letter]="letter"></app-remove-btn>
+
+
+
+<!-- Take the input here:
+ex- I am learning Angular - Display the input -->

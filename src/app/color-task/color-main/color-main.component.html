@@ -1,0 +1,8 @@
+<h1>Parent Component</h1>
+<h4>Select the color</h4>
+<label for="color">Pick the color</label>
+<input type="color" placeholder="Enter the color" name="color" [(ngModel)]="pickedColor">
+<h2>{{pickedColor}}</h2>
+<!-- Example: Use received color to style a div -->
+<app-color-text [pickedColor]="pickedColor"></app-color-text> 
+<app-color-bg [pickedColor]="pickedColor" ()></app-color-bg>

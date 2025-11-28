@@ -1,0 +1,9 @@
+
+<div>
+    <label for="letter">Enter Letter to Remove:</label>
+    <input type="text" placeholder="Enter letter to remove" id="letter" [(ngModel)]="letterToRemove" (change)="emitvalue()"/>
+    <h1>{{letterToRemove}}</h1>
+</div>
+
+
+<!-- Take the input which can allow user to enter a word and a letter to be removed from the phrases component. -->

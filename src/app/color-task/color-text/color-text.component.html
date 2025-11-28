@@ -1,0 +1,4 @@
+<h1>Child TEXT Component</h1>
+<p [ngStyle]="{'color' : pickedColor}">Lorem ipsum dolor sit, </p>
+<p>{{pickedColor | json}}</p>
+<app-color-bg (producedColor)="getColorValueFromBG($event)"></app-color-bg>

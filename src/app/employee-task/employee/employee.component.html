@@ -1,0 +1,153 @@
+<h1>Stats:</h1>
+<h6>Total Tasks: {{stats.totalTasks}}</h6>
+<h6>Total Pending Tasks: {{stats.pendingTasks}} </h6>
+<h6>Total Completed Tasks: {{stats.completedTasks}}</h6>
+
+<form (ngSubmit)="onSubmit()">
+    <h1>Add New Employee</h1>
+    <div class="employee-add-container">
+        <div class="basic-details">
+            <h2>Basic Details</h2>
+            <div class="input-box">
+                <label for="empName">Employee Name</label>
+                <input placeholder="Employee Name" type="text" name="empName" [(ngModel)]="newEmp.name">
+            </div>
+            <div class="input-box">
+                <label for="empID">Employee ID</label>
+                <input placeholder="Employee Id" type="text" name="empID" [(ngModel)]="newEmp.id">
+            </div>
+            <div class="input-box">
+                <label for="empPosition">Employee Position</label>
+                <input placeholder="Employee Position" type="text" name="empPosition" [(ngModel)]="newEmp.position">
+            </div>
+            <div class="input-box">
+                <label for="empDepName">Employee Department Name</label>
+                <input placeholder="Employee Department Name" type="text" name="empDepName"
+                    [(ngModel)]="newEmp.department.name">
+            </div>
+            <div class="input-box">
+                <label for="empManagerName">Employee Manager Name</label>
+                <input placeholder="Employee Manager Name" type="text" name="empManagerName"
+                    [(ngModel)]="newEmp.department.manager.name">
+            </div>
+        </div>
+
+        <div class="project-details">
+            <h2>Project Details</h2>
+            <div class="projects-display" *ngFor="let project of projectArray; let i = index">
+                <span>project name: {{project.projectName}}</span>
+                <span>project id: {{project.projectId}}</span>
+                <h6>Tasks Added to this project</h6>
+                <div *ngFor="let task of project.tasks">
+                    <span>{{task.taskId}}</span>
+                    <span>{{task.title}}</span>
+                    <span>{{task.status}}</span>
+                </div>
+            </div>
+            <div class="input-box">
+                <label for="projectName">projectName</label>
+                <input placeholder="projectName" type="text" name="projectName"
+                    [(ngModel)]="currentProject.projectName">
+            </div>
+            <div class="input-box">
+                <label for="projectID">projectID</label>
+                <input placeholder="projectID" type="text" name="projectID" [(ngModel)]="currentProject.projectId">
+            </div>
+            <h3>Task Details</h3>
+            <div class="tasks-display" *ngFor="let item of tasksArray; let i = index">
+                <span>task title : {{item.title}}</span>
+                <span>task id: {{item.taskId}}</span>
+                <span>task status: {{item.status}}</span>
+            </div>
+            <div class="input-box">
+                <label for="task">Task ID</label>
+                <input placeholder="taskId" type="text" name="taskId" [(ngModel)]="currentTask.taskId">
+            </div>
+            <div class="input-box">
+                <label for="taskTitle">taskTitle</label>
+                <input placeholder="taskTitle" type="text" name="taskTitle" [(ngModel)]="currentTask.title">
+            </div>
+            <div class="input-box">
+                <label for="taskStatus">taskStatus</label>
+                <input placeholder="taskStatus" type="text" name="taskStatus" [(ngModel)]="currentTask.status">
+            </div>
+            <div class="project-btns">
+                <button type="button" (click)="saveTasks()">Save
+                    Task</button>
+                <button type="button" (click)="saveProject()">Save project</button>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="tasks">
+        <label for="task">Task ID</label>
+        <input placeholder="taskId" type="text" name="taskId" [(ngModel)]="currentTask.taskId">
+        <label for="taskTitle">taskTitle</label>
+        <input placeholder="taskTitle" type="text" name="taskTitle" [(ngModel)]="currentTask.title">
+        <label for="taskStatus">taskStatus</label>
+        <input placeholder="taskStatus" type="text" name="taskStatus" [(ngModel)]="currentTask.status">
+        <button type="button" (click)="tasksData.push(currentTask); currentProject = {}; currentTask">Save Task</button>
+    </div>
+    <div *ngFor="let item of projectsData; let i = index">
+        <p>project name: {{item.projectName}}</p>
+        <p>project id: {{item.projectId}}</p>
+    </div> -->
+    <!-- <div *ngFor="let project of newEmp.projects; let i = index">
+        <h3>Project {{i + 1}}</h3>
+        <label>Project ID: <input name="projects[{{i}}].projectId" [(ngModel)]="project.projectId"></label><br>
+        <label>Project Name: <input name="projects[{{i}}].projectName" [(ngModel)]="project.projectName"></label><br>
+        <label>Start Date: <input type="date" name="projects[{{i}}].startDate"
+                [(ngModel)]="project.startDate"></label><br>
+
+        <div *ngFor="let task of project.tasks; let j = index">
+            <h4>Task {{j + 1}}</h4>
+            <label>Task ID: <input name="projects[{{i}}].tasks[{{j}}].taskId" [(ngModel)]="task.taskId"></label><br>
+            <label>Title: <input name="projects[{{i}}].tasks[{{j}}].title" [(ngModel)]="task.title"></label><br>
+            <label>Status:
+                <select name="projects[{{i}}].tasks[{{j}}].status" [(ngModel)]="task.status">
+                    <option value="Completed">Completed</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </label><br>
+        </div>
+    </div> -->
+
+    <button type="submit">Add Employee</button>
+</form>
+
+<h1>Total Employee Details</h1>
+<div class="main-container">
+    <div class="card" *ngFor="let emp of employees">
+        <div class="Employee-Detail">
+            <h1>Basic Details</h1>
+            <div class="two-columns emp-details">
+                <h4>Employee Name : <span style="font-weight: normal;">{{emp.employee.name}}</span></h4>
+                <h4>Employee Id : <span style="font-weight: normal;">{{emp.employee.id}}</span>
+                    <h4>Employee Position : <span style="font-weight: normal;">{{emp.employee.position}}</span></h4>
+                    <h4>Employee Department: <span
+                            style="font-weight: normal;">{{emp.employee.department.manager.name}}</span></h4>
+
+                    <h1>Projects Details</h1>
+                    <div class="two-columns project" *ngFor="let project of emp.employee.projects">
+                        <h4>Project Id:{{project.projectId}}</h4>
+                        <h4>Project Name:{{project.projectName}}</h4>
+                    </div>
+
+                    <h1>Tasks</h1>
+                    <table class="task-box" border="1" style="border-collapse: collapse;">
+                        <tr>
+                            <th>TaskId</th>
+                            <th>Name</th>
+                            <th>status</th>
+                        </tr>
+                        <ng-container *ngFor="let project of emp.employee.projects">
+                            <tr *ngFor="let task of project.tasks">
+                                <td>{{task.taskId}}</td>
+                                <td>{{task.title}}</td>
+                                <td
+                                    [ngClass]="{'completed-color': task.status === 'Completed', 'pending': task.status === 'Pending'}">
+                                    {{task.status}}</td>
+
+                            </tr>
+                        </ng-container>
+                    </table>
