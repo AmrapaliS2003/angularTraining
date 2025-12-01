@@ -24,13 +24,11 @@ export class CommonService {
 
   getAppName(): string {
     return this.appName.value;
-    // console.log('Get App Name: @Service', this.appNameSubject.value);
-    // return this.appNameSubject.value;
+
   }
   setAppName(name: string): void {
     this.appName.next(name)
-    // this.appNameSubject.next(name);
-    // console.log('Setting DONe: @Service', this.appName);
+
   }
 }
   
