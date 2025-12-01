@@ -7,8 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CommonService {
   employees: any;
-  private appNameSubject = new BehaviorSubject<string>('Service Task App');
-  appName = this.appNameSubject.asObservable();
+  appName = new BehaviorSubject<string>('Service App - Welcome');
   constructor(private http: HttpClient) { }
   
   checkPrime(num: number): boolean {
@@ -24,12 +23,14 @@ export class CommonService {
   }
 
   getAppName(): string {
-    console.log('Get App Name: @Service', this.appNameSubject.value);
-    return this.appNameSubject.value;
+    return this.appName.value;
+    // console.log('Get App Name: @Service', this.appNameSubject.value);
+    // return this.appNameSubject.value;
   }
   setAppName(name: string): void {
-    this.appNameSubject.next(name);
-    console.log('Setting DONe: @Service', this.appName);
+    this.appName.next(name)
+    // this.appNameSubject.next(name);
+    // console.log('Setting DONe: @Service', this.appName);
   }
 }
   

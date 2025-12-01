@@ -11,7 +11,9 @@ export class LeftPageComponent implements OnInit {
   constructor(private commonService: CommonService) { }
 
   ngOnInit(): void {
-     this.commonService.appName.subscribe(name => { this.appName = name; });
+    this.commonService.appName.subscribe((updatedAppName) => {
+      this.appName = updatedAppName;
+    })
   }
 
 }
