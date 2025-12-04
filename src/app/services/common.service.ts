@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CommonService {
   employees: any;
+  occupation : string = 'Farmer';
   appName = new BehaviorSubject<string>('Service App - Welcome');
   constructor(private http: HttpClient) { }
   
@@ -28,8 +29,12 @@ export class CommonService {
   }
   setAppName(name: string): void {
     this.appName.next(name)
-
   }
+  
+  getOccupation(): string {
+    return this.occupation;
+  }
+
 }
   
 

@@ -1,0 +1,23 @@
+<h3>Completed Tasks</h3>
+<div class="pending-tasks-container">
+    <div class="task-content" *ngFor="let task of completedTasks">
+        <div>
+            <div class="task-checkbox-container">
+                <div class="task-checkbox-container">
+                    <p><i>Hurray! Done with the task</i></p>
+                </div>
+                <p *ngIf="task.title" class="task-title"><i><b>Task Title:</b></i> {{ task.title }}</p>
+                <p *ngIf="task.description" class="task-description">
+                    <i><b>Task Description:</b></i> {{ task.description }}
+                </p>
+                <div class="task-meta">
+                    <span *ngIf="task.category" class="task-category">
+                        <p><i><b>Category:</b></i> {{ task.category }}</p>
+                    </span>
+                    <span *ngIf="task.dueDate" class="task-due-date">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

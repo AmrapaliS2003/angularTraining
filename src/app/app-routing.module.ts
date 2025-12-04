@@ -9,6 +9,7 @@ import { PhrasesComponent } from './word-task/phrases/phrases.component';
 import { MathComponent } from './services-task/math/math.component';
 import { EmployeeDataComponent } from './services-task/employee-data/employee-data.component';
 import { MainPageComponent } from './services-task/main-page/main-page.component';
+import { TodoMainComponent } from './Todo-App/todo-main/todo-main.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'services-task',
     component: MainPageComponent
+  },
+  {
+    path: 'todo',
+    component: TodoMainComponent
   }
 ];
 

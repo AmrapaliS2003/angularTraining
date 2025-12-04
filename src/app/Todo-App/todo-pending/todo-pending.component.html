@@ -1,0 +1,21 @@
+
+<h3>Pending Tasks</h3>
+<div class="pending-tasks-container">
+  <div *ngFor="let task of pendingTasks" class="task-content">
+    <div class="task-checkbox-container">
+      <p>Check once done with the task</p>
+      <input type="checkbox" [(ngModel)]="task.completed" class="task-checkbox" (change)="updateTaskCompletion()"/>
+    </div>
+    <p *ngIf="task.title" class="task-title"><i><b>Task Title:</b></i> {{ task.title }}</p>
+    <p *ngIf="task.description" class="task-description">
+      <i><b>Task Description:</b></i> {{ task.description }}
+    </p>
+    <div class="task-meta">
+      <span *ngIf="task.category" class="task-category">
+        <p><i><b>Category:</b></i> {{ task.category }}</p>
+      </span>
+      <span *ngIf="task.dueDate" class="task-due-date">
+        <p><i><b>Due Date:</b></i> {{ task.dueDate }}</p>
+      </span>
+    </div>
+

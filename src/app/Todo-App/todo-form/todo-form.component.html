@@ -1,0 +1,18 @@
+<form>
+    <label for="Task Title">Task Title:</label>
+    <input [(ngModel)]="task.title" name="taskTitle" type="text" id="Task Title" placeholder="Task Title" />
+    <label for="Task Description">Task Description:</label>
+    <input [(ngModel)]="task.description" name="taskDescription" type="text" id="Task Description" placeholder="Task Description" />
+    <label for="Task Category">Task category:</label>
+    <select [(ngModel)]="task.category" name="taskCategory" id="Task Category" placeholder="Task Category">
+        <option value="Work out">Work out</option>
+        <option value="Personal">Personal</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Home work">Home work</option>
+        <option value="Travel">Travel</option>
+        <option value="Fun & Entertainment">Fun & Entertainment</option>
+    </select>
+    <label for="Due Date">Due Date:</label>
+    <input [(ngModel)]="task.dueDate" name="taskDueDate" type="date" id="Due Date" placeholder="Due Date" />
+    <button type="button" (click)="addTask()">Add Task</button>
+</form>
