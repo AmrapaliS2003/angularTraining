@@ -10,6 +10,8 @@ import { MathComponent } from './services-task/math/math.component';
 import { EmployeeDataComponent } from './services-task/employee-data/employee-data.component';
 import { MainPageComponent } from './services-task/main-page/main-page.component';
 import { TodoMainComponent } from './Todo-App/todo-main/todo-main.component';
+import { TodoPendingComponent } from './Todo-App/todo-pending/todo-pending.component';
+import { PromisesComponent } from './promisesTask/promises/promises.component';
 
 const routes: Routes = [
   {
@@ -47,6 +49,10 @@ const routes: Routes = [
   {
     path: 'todo',
     component: TodoMainComponent
+  },
+  {
+    path: 'promises',
+    component: PromisesComponent
   }
 ];
 

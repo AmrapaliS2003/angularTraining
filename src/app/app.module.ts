@@ -26,6 +26,7 @@ import { TodoPendingComponent } from './Todo-App/todo-pending/todo-pending.compo
 import { TodoCompletionComponent } from './Todo-App/todo-completion/todo-completion.component';
 import { TodoAnalyticsComponent } from './Todo-App/todo-analytics/todo-analytics.component';
 import { TodoMainComponent } from './Todo-App/todo-main/todo-main.component';
+import { PromisesComponent } from './promisesTask/promises/promises.component';
 
 
 
@@ -54,6 +55,7 @@ import { TodoMainComponent } from './Todo-App/todo-main/todo-main.component';
     TodoCompletionComponent,
     TodoAnalyticsComponent,
     TodoMainComponent,
+    PromisesComponent,
   
   
   ],
