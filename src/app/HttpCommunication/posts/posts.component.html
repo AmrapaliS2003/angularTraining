@@ -1,0 +1,22 @@
+<p>posted Data!</p>
+<input type="search" placeholder="search post with title" [(ngModel)]="searchTitle" (input)="filterPosts()">
+<div *ngIf="!searchTitle">
+    <h3>All Users Data:</h3>
+    <ul>
+        <li *ngFor="let user of allPosts">
+           <p>{{ user | json }}</p>
+        </li>
+    </ul>
+</div>
+<div *ngIf="allPosts.length > 0">
+    <h3>Posts Data:</h3>
+    <ul>
+        <li *ngFor="let post of filteredData">
+           <p>{{ post | json }}</p>
+        </li>
+    </ul>
+</div>
+<div *ngIf="filteredData.length === 0 && searchTitle.trim() !== ''">
+    <p>No posts found matching "{{ searchTitle }}"</p>
+</div>
+

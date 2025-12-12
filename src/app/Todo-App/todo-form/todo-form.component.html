@@ -1,8 +1,9 @@
-<form>
+<!-- <form>
     <label for="Task Title">Task Title:</label>
     <input [(ngModel)]="task.title" name="taskTitle" type="text" id="Task Title" placeholder="Task Title" />
     <label for="Task Description">Task Description:</label>
-    <input [(ngModel)]="task.description" name="taskDescription" type="text" id="Task Description" placeholder="Task Description" />
+    <input [(ngModel)]="task.description" name="taskDescription" type="text" id="Task Description"
+        placeholder="Task Description" />
     <label for="Task Category">Task category:</label>
     <select [(ngModel)]="task.category" name="taskCategory" id="Task Category" placeholder="Task Category">
         <option value="Work out">Work out</option>
@@ -15,4 +16,35 @@
     <label for="Due Date">Due Date:</label>
     <input [(ngModel)]="task.dueDate" name="taskDueDate" type="date" id="Due Date" placeholder="Due Date" />
     <button type="button" (click)="addTask()">Add Task</button>
+</form> -->
+<form>
+    <div class="form-main">
+        <mat-form-field appearance="outline">
+            <mat-label>Task Title:</mat-label>
+            <input name="title" matInput  [(ngModel)]="task.title" [readonly]="true">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Task Description</mat-label>
+            <textarea name="description" matInput [(ngModel)]="task.description"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Task category:</mat-label>
+            <mat-select [(ngModel)]="task.category" name="taskCategory">
+                <mat-option value="Work out">Work out</mat-option>
+                <mat-option value="Personal">Personal</mat-option>
+                <mat-option value="Shopping">Shopping</mat-option>
+                <mat-option value="Home work">Home work</mat-option>
+                <mat-option value="Travel">Travel</mat-option>
+                <mat-option value="Fun & Entertainment">Fun & Entertainment</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Due Date:</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="task.dueDate" name="taskDueDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix  [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker disabled="true" #picker></mat-datepicker>
+        </mat-form-field>
+         <button mat-raised-button color="primary" (click)="addTask()">Add Task</button>
+    </div>
 </form>

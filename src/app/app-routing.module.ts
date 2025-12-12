@@ -12,6 +12,9 @@ import { MainPageComponent } from './services-task/main-page/main-page.component
 import { TodoMainComponent } from './Todo-App/todo-main/todo-main.component';
 import { TodoPendingComponent } from './Todo-App/todo-pending/todo-pending.component';
 import { PromisesComponent } from './promisesTask/promises/promises.component';
+import { DashboardComponent } from './HttpCommunication/dashboard/dashboard.component';
+import { PostsComponent } from './HttpCommunication/posts/posts.component';
+import { UsersComponent } from './HttpCommunication/users/users.component';
 
 const routes: Routes = [
   {
@@ -53,6 +56,20 @@ const routes: Routes = [
   {
     path: 'promises',
     component: PromisesComponent
+  },
+  {
+    path: 'api-dashboard',
+    component: DashboardComponent,
+    children: [
+      {
+        path: 'posts',
+        component: PostsComponent
+      },
+      {
+        path: 'users',
+        component: UsersComponent
+      }
+    ]
   }
 ];
 

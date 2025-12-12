@@ -27,7 +27,15 @@ import { TodoCompletionComponent } from './Todo-App/todo-completion/todo-complet
 import { TodoAnalyticsComponent } from './Todo-App/todo-analytics/todo-analytics.component';
 import { TodoMainComponent } from './Todo-App/todo-main/todo-main.component';
 import { PromisesComponent } from './promisesTask/promises/promises.component';
-
+import { DashboardComponent } from './HttpCommunication/dashboard/dashboard.component';
+import { PostsComponent } from './HttpCommunication/posts/posts.component';
+import { UsersComponent } from './HttpCommunication/users/users.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatButtonModule} from '@angular/material/button';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -56,6 +64,9 @@ import { PromisesComponent } from './promisesTask/promises/promises.component';
     TodoAnalyticsComponent,
     TodoMainComponent,
     PromisesComponent,
+    DashboardComponent,
+    PostsComponent,
+    UsersComponent,
   
   
   ],
@@ -63,7 +74,13 @@ import { PromisesComponent } from './promisesTask/promises/promises.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatButtonModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

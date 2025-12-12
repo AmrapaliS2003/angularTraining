@@ -1,0 +1,22 @@
+<p>Users Data!</p>
+<input type="search" placeholder="search users with title" [(ngModel)]="searchName" (input)="filterPosts()">
+<div *ngIf="!searchName">
+    <h3>All Users Data:</h3>
+    <ul>
+        <li *ngFor="let user of allUsers">
+           <p>{{ user | json }}</p>
+        </li>
+    </ul>
+</div>
+<div *ngIf="filteredData.length > 0">
+    <h3>Users Data:</h3>
+    <ul>
+        <li *ngFor="let user of filteredData">
+            <p>{{ user | json }}</p>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="filteredData.length === 0 && searchName.trim() !== ''">
+    <p>No users found matching "{{ searchName }}"</p>
+</div>
